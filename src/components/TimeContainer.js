@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
@@ -18,33 +18,38 @@ const Container = styled.div`
 const TimeContainer = (props) => {
 	const data = props.props;
 
-	const timeDiff = dayjs.duration(dayjs(data.date).diff(dayjs()));
+	const timeDiffRef = useRef(dayjs.duration(dayjs(data.date).diff(dayjs())));
 	const formattedDate = dayjs(data.date).format("ddd Do MMM");
 
-	const [months, setMonths] = useState(timeDiff.$d.months);
-	const [days, setDays] = useState(timeDiff.$d.days);
-	const [hours, setHours] = useState(timeDiff.$d.hours);
-	const [minutes, setMinutes] = useState(timeDiff.$d.minutes);
-	const [seconds, setSeconds] = useState(timeDiff.$d.seconds);
-	const [ms, setMs] = useState(timeDiff.$ms);
+	const [months, setMonths] = useState(timeDiffRef.current.$d.months);
+	const [days, setDays] = useState(timeDiffRef.current.$d.days);
+	const [hours, setHours] = useState(timeDiffRef.current.$d.hours);
+	const [minutes, setMinutes] = useState(timeDiffRef.current.$d.minutes);
+	const [seconds, setSeconds] = useState(timeDiffRef.current.$d.seconds);
+	const [ms, setMs] = useState(timeDiffRef.current.$ms);
+
 	useEffect(() => {
-		let myInterval = setInterval(() => {
-			setMs(timeDiff.$ms);
+		const myInterval = setInterval(() => {
+			setMs(timeDiffRef.current.$ms);
 
 			if (ms <= 0) {
+				console.log("stop");
 				clearInterval(myInterval);
 			} else {
-				setMonths(timeDiff.$d.months);
-				setDays(timeDiff.$d.days);
-				setHours(timeDiff.$d.hours);
-				setMinutes(timeDiff.$d.minutes);
-				setSeconds(timeDiff.$d.seconds);
+				console.log("tick");
+				setMonths(timeDiffRef.current.$d.months);
+				setDays(timeDiffRef.current.$d.days);
+				setHours(timeDiffRef.current.$d.hours);
+				setMinutes(timeDiffRef.current.$d.minutes);
+				setSeconds(timeDiffRef.current.$d.seconds);
+				timeDiffRef.current = dayjs.duration(dayjs(data.date).diff(dayjs()));
+				console.log("ref", timeDiffRef.current);
 			}
 		}, 1000);
 		return () => {
 			clearInterval(myInterval);
 		};
-	});
+	}, []);
 
 	let monthStr = "";
 	if (months === 1) {
