@@ -20,12 +20,43 @@ const GlobalStyle = createGlobalStyle`
   .pad-bot-8 {
     padding-bottom: 8px;
   }
+
+  .pad-right-10 {
+    padding-right: 10px;
+  }
+
+  .link {
+    color: #eee;
+  }
+
+  .link:visited {
+    color: #eee;
+  }
 `;
 
 const ContentWrapper = styled.main`
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
+`;
+
+const Header = styled.h1`
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+`;
+
+const FooterWrapper = styled.footer`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 6px;
+	background-color: #39181f;
+	color: #eee;
 `;
 
 // data
@@ -62,9 +93,27 @@ const IndexPage = () => {
 			<title>Not long now</title>
 
 			<ContentWrapper>
+				<Header>
+					I don't know how to calculate dates in my head. Check how long until
+					dice saloon opens here.
+				</Header>
+
 				{times.map((time, i) => (
 					<TimeContainer props={time} key={i} />
 				))}
+
+				<FooterWrapper>
+					<p class="pad-right-10">made with ♥ in Hove, actually</p>
+					<p>
+						see source on{` `}
+						<a
+							href="https://github.com/pekac45/dice-saloon-open"
+							className="link"
+						>
+							github
+						</a>
+					</p>
+				</FooterWrapper>
 			</ContentWrapper>
 		</React.Fragment>
 	);
