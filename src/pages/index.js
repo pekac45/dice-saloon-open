@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     color: #232129;
-    font-family: -apple-system, Roboto, sans-serif, serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
 
   .pad-bot-4 {
@@ -27,8 +27,6 @@ const ContentWrapper = styled.main`
 	flex-direction: column;
 	height: 100vh;
 `;
-
-// dayjs.duration(dayjs().diff(dayjs("2021-04-12-12:00")));
 
 // data
 const times = [
