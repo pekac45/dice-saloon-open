@@ -51,7 +51,7 @@ const times = [
 	{
 		title: "Walk-in Gaming with Pizza 🍕🍕🍕",
 		date: "2021-06-21-10:00",
-		description: "Await further advice from the Government and council",
+		description: "Await further advice from the Government and council.",
 		backgroundColor: "#fcbf49",
 		color: "#3e3e3e",
 	},
