@@ -40,21 +40,21 @@ const times = [
 		backgroundColor: "#003049",
 		color: "#eee",
 	},
-	// {
-	// 	title: "Booked Gaming without Pizza 🚫🍕",
-	// 	date: "2021-05-17-10:00",
-	// 	description:
-	// 		"Only booked gaming can take place. These bookings will need to be done online and more information about this will follow.",
-	// 	backgroundColor: "#f77f00",
-	// 	color: "#3e3e3e",
-	// },
-	// {
-	// 	title: "Walk-in Gaming with Pizza 🍕🍕🍕",
-	// 	date: "2021-06-21-10:00",
-	// 	description: "Await further advice from the Government and council",
-	// 	backgroundColor: "#fcbf49",
-	// 	color: "#3e3e3e",
-	// },
+	{
+		title: "Booked Gaming without Pizza 🚫🍕",
+		date: "2021-05-17-10:00",
+		description:
+			"Only booked gaming can take place. These bookings will need to be done online and more information about this will follow.",
+		backgroundColor: "#f77f00",
+		color: "#3e3e3e",
+	},
+	{
+		title: "Walk-in Gaming with Pizza 🍕🍕🍕",
+		date: "2021-06-21-10:00",
+		description: "Await further advice from the Government and council",
+		backgroundColor: "#fcbf49",
+		color: "#3e3e3e",
+	},
 ];
 
 const IndexPage = () => {
