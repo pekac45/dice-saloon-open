@@ -61,7 +61,7 @@ const IndexPage = () => {
 	return (
 		<React.Fragment>
 			<GlobalStyle />
-			<title>I wish I could game already</title>
+			<title>Not long now</title>
 
 			<ContentWrapper>
 				{times.map((time, i) => (
