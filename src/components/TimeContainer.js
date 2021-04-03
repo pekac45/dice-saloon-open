@@ -103,7 +103,7 @@ const TimeContainer = (props) => {
 
 	const timeContent =
 		ms <= 0
-			? `You can now do this!`
+			? `You can now do this! 🎉🎉🎉`
 			: `In ${monthStr} ${dayStr} ${hourStr} ${minuteStr} ${secStr}.`;
 
 	return (
