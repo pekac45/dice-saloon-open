@@ -111,7 +111,7 @@ const TimeContainer = (props) => {
 			<h2 className="pad-bot-8">{data.title}</h2>
 			<h3 className="pad-bot-4">{formattedDate}</h3>
 			<h3 className="pad-bot-4">{timeContent}</h3>
-			<p>{data.description}</p>
+			<p dangerouslySetInnerHTML={{ __html: data.description }} />
 		</Container>
 	);
 };
