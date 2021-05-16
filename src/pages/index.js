@@ -73,7 +73,7 @@ const times = [
 		title: "Booked Gaming without Pizza 🚫🍕",
 		date: "2021-05-17-10:00",
 		description:
-			'Only booked gaming can take place. <a href="https://www.dicesaloon.com/book_table/new">You can book the table here.</a>',
+			'Only booked gaming can take place. <a href="https://www.dicesaloon.com/book_table/new"><strong>You can book a table here.</strong></a>',
 		backgroundColor: "#f77f00",
 		color: "#3e3e3e",
 	},
